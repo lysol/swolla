@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% if transaction.Success or transaction.Status == 'processed' %}
+		Hurray! ${{ payment.amount }} was successfully sent to {{ payment.recipient }}.
+{% elif transaction.Status == 'pending' %}
+		Hold on a sec, this transaction is still processing.
+{% else %}
+		Hold on, this transaction is still processing or had a problem. Dwolla tells us this status is: {{ transaction.Status }}.<br />
+		Basically, talk to your friend about this because they need to fix it.
+{% endif %}
+
+{% endblock %}

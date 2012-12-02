@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<form action="" method="POST">
+    <fieldset>
+        <div class="input-row">
+            <span class="input">
+                <label for="recipient">Recipient Phone Number</label>
+            </span>
+            <span class="input">
+                <input type="tel" name="recipient" />
+            </span>
+        </div>
+        <div class="input-row">
+            <span class="input">
+                <label for="amount">Amount</label>
+            </span>
+            <span class="input">
+                <input type="number" name="amount" step="any" />
+            </span>
+        </div>
+        <div class="input-row">
+            <span class="input">
+                <label for="pin">PIN</label>
+            </span>
+            <span class="input">
+                <input type="number" name="pin" />
+            </span>
+        </div>
+        <div class="input-row">
+            <span class="input">
+                <button>Send Money</button>
+            </span>
+        </div>
+    </fieldset>
+</form>
+
+{% endblock %}

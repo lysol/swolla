@@ -1,0 +1,6 @@
+{% extends 'base.html' %}
+
+{% block content %}
+		A request to accept ${{ payment.amount }} from you was sent to {{ payment.recipient }}.
+		You can cancel this request on your <a href="{{ url_for('home') }}">Dashboard</a>.
+{% endblock %}

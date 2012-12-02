@@ -1,0 +1,2 @@
+You just received ${{ amount }} from {{ from_ }} using Swolla! Claim it by
+visiting {{ url }} and entering {{ code }}.

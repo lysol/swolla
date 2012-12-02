@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% block content %}
+    
+    <div class="setup">
+        {% if session.user is not defined %}
+        <p>
+            To get started, you'll have to do a one-time setup. 
+            Just click the Login link above, and when you get back here,
+            enter in the phone number you'll be sending messages from, in the format:<br />
+        </p> 
+        <p>
+            <strong>555-555-1234</strong>
+        </p>
+        <p>
+            Once you're done with that, edit your contacts, adding a short name
+            for anyone you want to send Dwolla funds to via SMS.
+        </p>
+        <p>
+            When you're done with this you can send funds by texting <strong>(641)&nbsp;569-6311</strong>
+            using the format <strong>Amount PIN Short Name</strong>. Example:
+        </p>
+        <p>
+            <strong>100.10 1234 landlord</strong>
+        </p>
+
+        <p>
+            Your PIN is never stored, and you'll receive a reply if the payment was
+            accepted by Dwolla.
+        </p>
+        {% else %}
+            <p>
+                Welcome back, {{ session.user.Name }}!
+            </p>
+            <p>
+                Remember, the format is <strong>Amount PIN Short Name</strong><br /> and the Swolla SMS number is <strong>(641) 569-6311</strong>.
+            </p>
+            <p>
+                <a href="https://www.dwolla.com/account" target="_blank">Your Dwolla Account</a>
+            </p>
+        {% endif %}
+    </div>
+     
+{% endblock %}

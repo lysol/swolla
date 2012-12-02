@@ -1,0 +1,13 @@
+DATABASE_CONNECTION = "host=localhost user=swolla dbname=swolla"
+
+SECRET = ''
+
+DWOLLA_KEY = ''
+DWOLLA_SECRET = ''
+
+TWILIO_ACCOUNT_SID = ''
+TWILIO_AUTH_TOKEN = ''
+TWILIO_FROM_NUMBER = ''
+
+APP_HOST = '127.0.0.1'
+APP_PORT = 5000

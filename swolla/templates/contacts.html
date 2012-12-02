@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    Your contact short names:
+
+    {% for contact in contacts %}
+    <div class="contact-form">
+        <form action="{{ url_for('contacts') }}" method="POST">
+            <div class="input-row">
+                <span class="input">
+                    <label class="contact-name" for="contact_id"><strong>{{ contact.Name }} ({{ contact.Id }})</strong></label>
+                </span>
+            </div>
+            <input type="hidden" name="contact_id" value="{{ contact.Id }}" />
+            <div class="input-row">
+                <span class="input">
+                    <label for="short_name">Short Name</label>
+                </span>
+                <span class="input">
+                    <input name="short_name" value="{% if short_names[contact.Id] is defined %}{{ short_names[contact.Id] }}{% endif %}" />
+                </span>
+            </div>
+            <div class="input-row">
+                <span class="input">
+                    <button>Save</button>
+                </span>
+            </div>
+        </form>
+    </div>
+    {% endfor %}
+{% endblock %}
